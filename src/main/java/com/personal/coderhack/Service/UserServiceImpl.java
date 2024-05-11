@@ -64,11 +64,11 @@ public class UserServiceImpl implements UserService{
         Optional<User> existingUser = userRepository.findById(user.getUserId());
         if(!existingUser.isEmpty()) throw new InvalidUserIdException("User Id already exist");
 
-        //check  empty badge list
-        if(user.getBadgesList().size() > 0) throw new InvalidBadgeListException("Badge List should be empty");
-
         //check for zero score
         if(user.getScore() != 0) throw new ScoreNotZeroException("Score is not zero");
+
+        //check  empty badge list
+        if(user.getBadgesList().size() > 0) throw new InvalidBadgeListException("Badge List should be empty");
 
         return userRepository.save(user);
     }

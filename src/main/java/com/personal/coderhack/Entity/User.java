@@ -21,4 +21,15 @@ public class User {
     private String username;
     private Long score;
     private HashSet<Badges> badgesList;
+
+    public User(Long userId, String username, long score) {
+        this.userId = userId;
+        this.username = username;
+        this.score = score;
+    }
+
+    public User(Long userId, String username) {
+        this.userId = userId;
+        this.username = username;
+    }
 }

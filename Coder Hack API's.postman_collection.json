@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "e2753982-0ee4-4e47-8f37-7c3da7d916a9",
+		"name": "Coder Hack API's",
+		"description": "API collection for User registration, user deletion, User Updation, Getting all users, Getter single user.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34861998"
+	},
+	"item": [
+		{
+			"name": "getAllUsersSorted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "API to get list of User in sorted order based on their score"
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "API to get user using user ID"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUserById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/users/2",
+				"description": "API to delete user using the user ID"
+			},
+			"response": []
+		},
+		{
+			"name": "createNewUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 2,\r\n    \"username\": \"utsav\",\r\n    \"score\": 0,\r\n    \"badgesList\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/users",
+				"description": "API to register new User with score 0 and with no badges"
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserScore",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/users/2",
+				"description": "API to udpate the Score of registered User"
+			},
+			"response": []
+		}
+	]
+}

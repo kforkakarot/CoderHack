@@ -88,7 +88,7 @@ public class UserServiceImplTests {
 
         assertThrows(UserNotFoundException.class, () -> userService.deleteUserById(1L));
     }
-    
+
 
     @Test
     public void testUpdateUserById_InvalidScore() {

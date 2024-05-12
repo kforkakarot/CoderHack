@@ -46,11 +46,11 @@ public class UserServiceImpl implements UserService{
         if(userRepository.findById(userId).isEmpty()) throw new UserNotFoundException("User does not exist");
 
         User userToUpdate = userRepository.findById(userId).get();
-        HashSet<Badges> badges =userToUpdate.getBadgesList();
+        HashSet<Badges> badges = userToUpdate.getBadgesList();
 
-        if(score.getScore() >= 1 && score.getScore() < 30) badges.add(Badges.CODENINJA);
+        if(score.getScore() >= 60 && score.getScore() <= 100) badges.add(Badges.CODEMASTER);
         else if(score.getScore() >= 30 && score.getScore() < 60) badges.add(Badges.CODECHAMP);
-        else badges.add(Badges.CODEMASTER);
+        else if(score.getScore() >= 1 && score.getScore() < 30) badges.add(Badges.CODENINJA);
 
         userToUpdate.setScore(score.getScore());
         userToUpdate.setBadgesList(badges);
